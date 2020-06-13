@@ -2137,6 +2137,11 @@ margin: auto;
     #colorlib-logo img{
     width: 350%;
 }
+    .product-img{
+       width: 70%;
+        height: 70%;
+        margin: auto;
+   }
 }
 @media screen and (min-width: 768px){
     #colorlib-logo img{
