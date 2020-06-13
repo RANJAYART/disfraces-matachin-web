@@ -1,14 +1,15 @@
 import React from 'react';
 import logo from '../logo.svg';
-import '../css/libs/App.css';
+import '../css/App.css';
+import StickyHeader from "./header/StickyHeader";
+import ImageSliderSection from "./sections/ImageSliderSection";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+      <div>
+          <StickyHeader></StickyHeader>
+          <ImageSliderSection></ImageSliderSection>
+      </div>
   );
 }
 
