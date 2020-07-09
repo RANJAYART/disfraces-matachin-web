@@ -15,9 +15,9 @@ function App() {
           <div>
               <StickyHeader/>
               <BackgroundCarousel/>
-              <Sections/>
               <CostumesDisplay/>
               <Promotions/>
+              <Sections/>
               <SubscribeStripe/>
               <Footer/>
           </div>
