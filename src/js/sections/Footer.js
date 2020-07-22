@@ -20,7 +20,7 @@ function Footer(){
                     <div className="col-md-3">
                         <h4>CONTÁCTANOS</h4>
                         <ul className="colorlib-footer-links">
-                            <li>CRa 31 D # 1A - 50</li>
+                            <li>Cra 31 D # 1A - 50</li>
                             <li><a href="tel://1234567920">3107833943</a></li>
                             <li><a href="mailto:info@yoursite.com">creacionesmotitas@yahoo.com</a></li>
                             <li><a href="#">www.disfracesmatachin.com</a></li>

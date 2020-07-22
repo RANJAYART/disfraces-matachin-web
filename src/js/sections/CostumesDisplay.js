@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import ProductEntry from "./ProductEntry";
 
 export default class CostumesDisplay extends Component {
 
@@ -13,11 +14,26 @@ export default class CostumesDisplay extends Component {
     };
 
     async componentDidMount() {
-        const response = await fetch("http://localhost:8080/costumes");
-        const data = await response.json();
-        await this.processRequest(data);
+        if(this.props.idSection){
+            const response = await fetch("http://localhost:8080/costumes/"+this.props.idSection);
+            const data = await response.json();
+                for(let i = 0; i < data[0].sections.length; i++){
+                    let section  = data[0].sections[i];
+                    if(section && section.id === this.props.idSection){
+                        this.setState({sectionTitle: section.name});
+                        this.setState({subtext: section.subtext});
+                    }
+                }
+            await this.processRequest(data);
+        }
+        else{
+            const response = await fetch("http://localhost:8080/costumes");
+            const data = await response.json();
+            this.setState({sectionTitle: "TODOS NUESTROS DISFRACES"});
+            this.setState({subtext: "Todo nuestro catálogo a tu disposición"});
+            await this.processRequest(data);
+        }
     }
-
 
     render() {
 
@@ -28,32 +44,14 @@ export default class CostumesDisplay extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 col-md-offset-3 text-center colorlib-heading">
-                            <h2><span>NUEVOS MODELOS</span></h2>
-                            <p>Últimas tendencias y los más recientes diseños </p>
+                            <h2><span>{this.state.sectionTitle}</span></h2>
+                            <p>{this.state.subtext}</p>
                         </div>
                     </div>
                     <div className="row">
                         {this.state.costumes.map((costume, index) => {
                             return <div className="col-md-3 text-center">
-                                <div className="product-entry">
-                                    <div className="product-img"
-                                         style={{backgroundImage: "url("+costume.imageURL+")"}}>
-                                        <p className="tag"><span className="new">New</span></p>
-                                        <div className="cart">
-                                            <p>
-                                        <span className="addtocart"><a href="#"><i
-                                            className="icon-shopping-cart"/></a></span>
-                                                <span><a href="#"><i className="icon-eye"/></a></span>
-                                                <span><a href="#"><i className="icon-heart3"/></a></span>
-                                                <span><a href="#"><i className="icon-bar-chart"/></a></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="desc">
-                                        <h3><a href="shop.html">{costume.name}</a></h3>
-                                        <p className="price"><span>${costume.price}</span></p>
-                                    </div>
-                                </div>
+                                <ProductEntry costume ={costume}/>
                             </div>
                         })}
                     </div>

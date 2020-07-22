@@ -6,7 +6,7 @@ function Promotions() {
     <div id="colorlib-intro" className="colorlib-intro"
          style={{
              backgroundRepeat: "no-repeat",
-             backgroundImage:"url(https://github.com/RANJAYART/disfraces-matachin-web/raw/master/images/disfraces-superheroes.jpg)",
+             backgroundImage:"url(https://github.com/RANJAYART/disfraces-matachin-web/raw/master/src/images/disfraces-superheroes.jpg)",
              backgroundPosition: '50% -25px',
              backgroundSize: 'cover'
          }}

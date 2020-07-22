@@ -7,16 +7,16 @@ import '../../css/libs/style.css';
 
 const images = [
     {
-        original: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/images/img_bg_1.jpg',
-        thumbnail: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/images/img_bg_1.jpg',
+        original: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/src/images/img_bg_1.jpg',
+        thumbnail: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/src/images/img_bg_1.jpg',
     },
     {
-        original: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/images/img_bg_2.jpg',
-        thumbnail: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/images/img_bg_2.jpg',
+        original: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/src/images/img_bg_2.jpg',
+        thumbnail: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/src/images/img_bg_2.jpg',
     },
     {
-        original: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/images/img_bg_3.jpg',
-        thumbnail: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/images/img_bg_3.jpg',
+        original: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/src/images/img_bg_3.jpg',
+        thumbnail: 'https://github.com/RANJAYART/disfraces-matachin-web/raw/master/src/images/img_bg_3.jpg',
     }
 ];
 
