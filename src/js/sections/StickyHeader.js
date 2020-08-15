@@ -10,7 +10,26 @@ class StickyHeader extends React.Component{
         this.$el = $(this.el);
     }
 
-    componentWillUnmount() {
+    componentWillMount() {
+        if(!localStorage.getItem("shoppingCart")){
+            localStorage.setItem("shoppingCart", JSON.stringify(new Map()));
+        }
+    }
+
+    getAmountOfItemsInCart(){
+        let numberOfCostumes = 0;
+        let shoppingCart;
+        if(localStorage.getItem("shoppingCart").length === 2) {
+            shoppingCart = new Map();
+        }
+        else{
+            shoppingCart = new Map(JSON.parse(localStorage.getItem("shoppingCart")));
+        }
+
+        shoppingCart.forEach(costume=>{
+            numberOfCostumes+=JSON.parse(costume).amount;
+        });
+        return numberOfCostumes;
     }
 
 
@@ -41,7 +60,7 @@ class StickyHeader extends React.Component{
                                         <li><a href="#">ALQUILER</a></li>
                                         <li><Link to="/about">NOSOTROS</Link></li>
                                         <li><a href="#">CONTACTO</a></li>
-                                        <li><a href="#"><i className="icon-shopping-cart"></i> CART [0]</a></li>
+                                        <li><Link to="/cart"><i className="icon-shopping-cart"></i> CARRITO [{this.getAmountOfItemsInCart()}]</Link></li>
                                     </ul>
                                 </div>
                             </div>

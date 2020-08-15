@@ -10,6 +10,8 @@ import {
 import Home from "./routes/Home";
 import About from "./routes/About";
 import Shop from "./routes/Shop";
+import ShoppingCart from "./routes/ShoppingCart";
+import ProductDetails from "./routes/ProductDetails";
 
 function App() {
       return (
@@ -18,6 +20,8 @@ function App() {
                   <Route path = "/" exact component={Home}/>
                   <Route path = "/about" exact component={About}/>
                   <Route path = "/shop" exact component={Shop}/>
+                  <Route path = "/cart" exact component={ShoppingCart}/>
+                  <Route path = "/product-detail/:costumeId" exact component={ProductDetails}/>
               </Switch>
           </Router>
       );
